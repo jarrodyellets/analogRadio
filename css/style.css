@@ -270,3 +270,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffefc', end
   font-size: 14px;
 }
 
+@media screen and (max-width: 700px) {
+  .container {
+    -moz-transform: scale(0.80);
+    -o-transform: scale(0.80);
+    -webkit-transform: scale(0.80);
+    transform: scale(0.80);
+  }
+}
+
