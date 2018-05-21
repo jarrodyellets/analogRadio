@@ -5,9 +5,6 @@ $(document).ready(function() {
   const radioOn = new Audio("http://www.jarrodyellets.com/sounds/radioOn.mp3");
   const radioOff = new Audio("http://www.jarrodyellets.com/sounds/CRTOff.mp3");
   const static = new Audio("http://www.jarrodyellets.com/sounds/static.mp3");
-  const clearStatic = new Audio(
-    "http://www.jarrodyellets.com/sounds/clearStatic.mp3"
-  );
   const rap = new Audio("http://ic269.c715.fast-serv.com/stream.mp3");
   const eclectic = new Audio("http://50.22.253.46/supernovaradio");
   const jazz = new Audio("http://stream.100000000000000.com:8000/JAZZ");
@@ -26,8 +23,6 @@ $(document).ready(function() {
   let turnLeft;
   let turnRight;
   let power = false;
-  
-  static.preload = "auto";
 
   $("#btn1").on("mousedown", function() {
     moveButton(105);
@@ -139,10 +134,11 @@ $(document).ready(function() {
   }
 
   function switchStation(s) {
-    $("body").addClass("dummy").removeClass("dummy");
     currentStation.pause();
     currentStation = s;
-    currentStation.play();
+    setTimeout(function(){
+      currentStation.play();
+    }, 2);
   }
  
 
